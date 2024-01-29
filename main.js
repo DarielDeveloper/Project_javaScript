@@ -79,7 +79,7 @@ function renderTasks() {
 
 function startButtonHandle(id) {
   //Control de los 25mn
-  time = 5;
+  time = 25*60;
   //Para que el cronometro salga en el tiempo inicial
   renderTime();
 
