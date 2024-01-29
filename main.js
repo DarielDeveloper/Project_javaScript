@@ -2,8 +2,6 @@
 const tasks = [];
 let time = 0;
 let timer = null;
-let timerBreak = null;
-let current = null;
 let taskIndex = 0;
 
 //Capturo los elementos
@@ -81,13 +79,15 @@ function renderTasks() {
 
 function startButtonHandle(id) {
   //Control de los 25mn
-  time = 3;
-  current = id;
+  time = 5;
+  //Para que el cronometro salga en el tiempo inicial
+  renderTime();
+
   //Busco el index del elemento
   taskIndex = tasks.findIndex((task) => task.id === id);
   //Le incorporo el nombre de la tarea
   taskName.textContent = tasks[taskIndex].title;
-  //Incorporo setInerval para cada 1s llame timeHandler
+  //Incorporo setInerval para cada 1s llame timeHandler  
   timer = setInterval(() => {
     timeHandler();
   }, 1000)
@@ -97,7 +97,7 @@ function startButtonHandle(id) {
 function timeHandler() {
   //Quito tiempo
   time--;
-  //Compruebo hasta que llegue 0 el tiempo para detener el setInterval
+  //Compruebo hasta que llegue 0 el tiempo para detener el setInterval y completar la tarea
   if (time === 0) {
 
     completedTask();
@@ -105,6 +105,7 @@ function timeHandler() {
   }
   //Control del tiempo
   renderTime();
+
 }
 
 function renderTime() {
@@ -122,8 +123,7 @@ function completedTask() {
   clearInterval(timer);
   //Seteo el timer
   timer = null;
-  //Seteo el id
-  current = null;
+
   //Seteo el nombre 
   taskName.textContent = '';
   //Se completo la tarea
