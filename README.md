@@ -1,2 +1,2 @@
-# Project_javaScript
-Creando proyecto en  javaScript, html y css.
+# Proyecto Pomodoro
+Proyecto para asignar tiempo a las tareas
