@@ -1,2 +1,2 @@
-# Project_javaScript
-Creando proyecto en  javaScript, html y css.
+# Cuenta Regresiva
+Proyecto para controlar el tiempo de las tareas
